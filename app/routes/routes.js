@@ -1,11 +1,12 @@
-const {Router} = require("express");
+const Express = require("express");
 const controller = require("../controllers/controller");
-const router = Router();
+const express = Express();
 
-router.get("/",controller.getStudent);
-router.get("/:id",controller.getStudentById);
-router.post("/",controller.addStudent);
-router.put("/:id",controller.updateStudent);
-router.delete("/:id",controller.removeStudent);
+//Creating routes for CRUD operations
+express.get("/",controller.getStudent);
+express.get("/:id",controller.getStudentById);
+express.post("/",controller.addStudent);
+express.put("/:id",controller.updateStudent);
+express.delete("/:id",controller.removeStudent);
 
-module.exports = router;
+module.exports = express;
